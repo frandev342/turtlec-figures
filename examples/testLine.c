@@ -54,10 +54,18 @@ int main(void) {
   turtlePenUp(t);
   turtleLeft(t, 90);
   turtleBackward(t, 50);
+  turtleRight(t, 90);
   turtlePenDown(t);
 
-  fractalTree(t, 20, 7);
+  turtleSetSpeed(t, 0.5);
 
+  //  fractalTree(t, 20, 7);
+
+  for (int i = 0; i < 10; i++) {
+    levy(t, 100, i);
+    turtleClear(t);
+    turtleHome(t);
+  }
   turtleAppRun(app);
   turtleAppDestroy(app);
   return 0;
