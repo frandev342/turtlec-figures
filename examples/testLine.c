@@ -37,15 +37,15 @@ void levy(Turtle *turtle, float length, int depth) {
   turtleLeft(turtle, 45);
   levy(turtle, length / sqrt(2), depth - 1);
 
-  turtleRight(turtle, 90);
-  levy(turtle, length / sqrt(2), depth - 1);
-
-  turtleLeft(turtle, 45);
-
   int r = (253 * depth) % 256;
   int g = (156 * depth) % 256;
   int b = (43 * depth) % 256;
   turtleSetColor(turtle, r, g, b);
+
+  turtleRight(turtle, 90);
+  levy(turtle, length / sqrt(2), depth - 1);
+
+  turtleLeft(turtle, 45);
 }
 
 int main(void) {
