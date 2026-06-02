@@ -9,21 +9,19 @@ void fractalTree(Turtle *turtle, float length, int depth) {
 
   // Dibujar tres ramas
   turtleLeft(turtle, 30); // GIrar 30° a la izquierda y dibujar rama
-  fractalTree(turtle, length * 0.8, depth - 1);
+  fractalTree(turtle, length * 0.6, depth - 1);
 
   turtleRight(turtle,
               30); // Regresar al centro girando 30° a la derecha y dibujar rama
   fractalTree(turtle, length * 0.8, depth - 1);
 
   turtleRight(turtle, 30); // Girar 30° a la derecha y dibujar rama
-  fractalTree(turtle, length * 0.8, depth - 1);
-
-  turtleLeft(turtle, 30);
+  fractalTree(turtle, length * 0.6, depth - 1);
 
   if (depth > 5)
-    turtleSetColor(turtle, 120, 70, 20);
+    turtleLeft(turtle, 30);
   else
-    turtleSetColor(turtle, 0, 200, 0);
+    turtleSetColor(turtle, 120, 70, 20);
 
   turtleBackward(turtle, length);
 }
@@ -57,7 +55,7 @@ int main(void) {
   //  turtleRight(t, 90);
   turtlePenDown(t);
 
-  fractalTree(t, 20, 0);
+  fractalTree(t, 20, 6);
 
   //  turtleSetSpeed(t, 0.5);
 
