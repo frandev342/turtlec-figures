@@ -1,4 +1,5 @@
 #include "../turtlec.h"
+#include <math.h>
 
 void fractalTree(Turtle *turtle, float length, int depth) {
   if (depth == 0 || length < 5)
@@ -42,6 +43,8 @@ int main(void) {
   turtleLeft(t, 90);
   turtleBackward(t, 50);
   turtlePenDown(t);
+
+  fractalTree(t, 48, 5);
 
   turtleAppRun(app);
   turtleAppDestroy(app);
