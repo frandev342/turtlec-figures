@@ -33,6 +33,7 @@ void levy(Turtle *turtle, float length, int depth) {
     turtleForward(turtle, length);
     return;
   }
+
   turtleLeft(turtle, 45);
   levy(turtle, length / sqrt(2), depth - 1);
 
@@ -40,6 +41,11 @@ void levy(Turtle *turtle, float length, int depth) {
   levy(turtle, length / sqrt(2), depth - 1);
 
   turtleLeft(turtle, 45);
+
+  int r = (253 * depth) % 256;
+  int g = (156 * depth) % 256;
+  int b = (43 * depth) % 256;
+  turtleSetColor(turtle, r, g, b);
 }
 
 int main(void) {
@@ -54,14 +60,15 @@ int main(void) {
   turtlePenUp(t);
   turtleLeft(t, 90);
   turtleBackward(t, 50);
-  //  turtleRight(t, 90);
+  turtleRight(t, 90);
   turtlePenDown(t);
 
-  fractalTree(t, 20, 6);
+  //  fractalTree(t, 20, 6);
 
   //  turtleSetSpeed(t, 0.5);
 
   //  fractalTree(t, 20, 7);
+  levy(t, 100, 7);
 
   //  for (int i = 0; i < 10; i++) {
   //    levy(t, 100, i);
