@@ -7,10 +7,14 @@ void fractalTree(Turtle *turtle, float length, int depth) {
 
   turtleForward(turtle, length);
 
-  turtleLeft(turtle, 30);
+  turtleLeft(turtle, 30); // GIrar 30° a la izquierda y dibujar rama
   fractalTree(turtle, length * 0.8, depth - 1);
 
-  turtleRight(turtle, 60);
+  turtleRight(turtle,
+              30); // Regresar al centro girando 30° a la derecha y dibujar rama
+  fractalTree(turtle, length * 0.8, depth - 1);
+
+  turtleRight(turtle, 30); // Girar 30° a la derecha y dibujar rama
   fractalTree(turtle, length * 0.8, depth - 1);
 
   turtleLeft(turtle, 30);
@@ -54,18 +58,20 @@ int main(void) {
   turtlePenUp(t);
   turtleLeft(t, 90);
   turtleBackward(t, 50);
-  turtleRight(t, 90);
+  //  turtleRight(t, 90);
   turtlePenDown(t);
 
-  turtleSetSpeed(t, 0.5);
+  fractalTree(t, 20, 4);
+
+  //  turtleSetSpeed(t, 0.5);
 
   //  fractalTree(t, 20, 7);
 
-  for (int i = 0; i < 10; i++) {
-    levy(t, 100, i);
-    turtleClear(t);
-    turtleHome(t);
-  }
+  //  for (int i = 0; i < 10; i++) {
+  //    levy(t, 100, i);
+  //    turtleClear(t);
+  //    turtleHome(t);
+  //  }
   turtleAppRun(app);
   turtleAppDestroy(app);
   return 0;
