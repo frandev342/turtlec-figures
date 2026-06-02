@@ -18,10 +18,7 @@ void fractalTree(Turtle *turtle, float length, int depth) {
   turtleRight(turtle, 30); // Girar 30° a la derecha y dibujar rama
   fractalTree(turtle, length * 0.6, depth - 1);
 
-  if (depth > 5)
-    turtleLeft(turtle, 30);
-  else
-    turtleSetColor(turtle, 120, 70, 20);
+  turtleLeft(turtle, 30);
 
   turtleBackward(turtle, length);
 }
