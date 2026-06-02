@@ -4,16 +4,22 @@
 void fractalTree(Turtle *turtle, float length, int depth) {
   if (depth == 0 || length < 5)
     return;
+
   turtleForward(turtle, length);
 
   turtleLeft(turtle, 30);
   fractalTree(turtle, length * 0.8, depth - 1);
 
-  turtleRight(turtle, 45);
+  turtleRight(turtle, 60);
   fractalTree(turtle, length * 0.8, depth - 1);
 
   turtleLeft(turtle, 30);
   turtleBackward(turtle, length);
+
+  if (depth > 5)
+    turtleSetColor(turtle, 120, 70, 20);
+  else
+    turtleSetColor(turtle, 0, 200, 0);
 }
 
 void levy(Turtle *turtle, float length, int depth) {
@@ -44,7 +50,7 @@ int main(void) {
   turtleBackward(t, 50);
   turtlePenDown(t);
 
-  fractalTree(t, 32, 5);
+  fractalTree(t, 20, 7);
 
   turtleAppRun(app);
   turtleAppDestroy(app);
