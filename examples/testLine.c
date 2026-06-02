@@ -20,9 +20,9 @@ void fractalTree(Turtle *turtle, float length, int depth) {
 
   turtleLeft(turtle, 30);
 
-  int r = (10 * depth) % 256;
-  int g = (20 * depth) % 256;
-  int b = (40 * depth) % 256;
+  int r = (17 * depth) % 256;
+  int g = (56 * depth) % 256;
+  int b = (78 * depth) % 256;
   turtleSetColor(turtle, r, g, b);
 
   turtleBackward(turtle, length);
